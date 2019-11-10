@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Search from './Search';
 import './customers.css';
 
 class Customers extends Component {
@@ -24,6 +25,7 @@ class Customers extends Component {
           <li key={customer.id}>{customer.firstName} {customer.lastName}</li>
         )}
         </ul>
+        <Search/>
       </div>
     );
   }
