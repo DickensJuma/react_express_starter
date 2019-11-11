@@ -17,9 +17,11 @@
     "react-csv-downloader": "^1.4.0"
   },
   "dependencies": {
+    "@trendmicro/react-modal": "^3.0.0",
     "bootstrap": "^4.3.1",
     "concurrently": "^3.5.1",
     "express": "^4.16.2",
+    "react": "^16.11.0",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-tabulator": "^0.10.3"
   }

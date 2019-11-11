@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from 'react-bootstrap';
-// import "./styles.css";
+
+import "./Table.css";
 import CsvDownloader from 'react-csv-downloader';
 
 import DateEditor from "react-tabulator/lib/editors/DateEditor";
@@ -12,6 +12,8 @@ import "react-tabulator/css/bootstrap/tabulator_bootstrap.min.css"; // use Theme
 
 // for React 16.4.x use: import { ReactTabulator } - example in github repo.
 import { React15Tabulator, reactFormatter } from "react-tabulator"; // for React 15.x
+
+
 
 function SimpleButton(props: any) {
   const cellData = props.cell._cell.row.data;
@@ -79,55 +81,7 @@ const petOptions = [
   { id: "dog", name: "dog" },
   { id: "fish", name: "fish" }
 ];
-const editableColumns = [
-  {
-    title: "Name",
-    field: "name",
-    width: 150,
-    editor: "input",
-    headerFilter: "input"
-  },
-  {
-    title: "Age",
-    field: "age",
-    align: "left",
-    formatter: "progress",
-    editor: "progress"
-  },
-  {
-    title: "Favourite Color",
-    field: "color",
-    editor: "select",
-    editorParams: {
-      allowEmpty: true,
-      showListOnEmpty: true,
-      values: colorOptions
-    },
-    headerFilter: "select",
-    headerFilterParams: { values: colorOptions }
-  },
-  {
-    title: "Date Of Birth",
-    field: "dob",
-    editor: DateEditor,
-    editorParams: { format: "MM/dd/yyyy" }
-  },
-  {
-    title: "Pets",
-    field: "pets",
-    editor: MultiSelectEditor,
-    editorParams: { values: petOptions },
-    formatter: MultiValueFormatter,
-    formatterParams: { style: "PILL" }
-  },
-  {
-    title: "Passed?",
-    field: "passed",
-    align: "center",
-    formatter: "tickCross",
-    editor: true
-  }
-];
+
 
 class Table extends React.Component {
   state = {
@@ -229,18 +183,8 @@ class Table extends React.Component {
     return (
       <div>
       
-        {/* <React15Tabulator
-          ref={ref => (this.ref = ref)}
-          columns={this.columns}
-          data={data}
-          rowClick={this.rowClick}
-          options={options}
-          data-custom-attr="test-custom-attribute"
-          className="custom-css-class"
-        />
-         <div>Selected Name: {this.state.selectedName}</div>*/}
-
         <h3>
+        
           {/* Asynchronous data: (e.g. fetch) -{" "} */}
           <button onClick={this.setData} style={{backgroundColor: "lightblue"}}>Set Data</button>
           <button onClick={this.clearData}>Clear</button>
@@ -252,17 +196,12 @@ class Table extends React.Component {
         datas={datas}
         variant="info"
         text="Download csv" />
+      
         </h3>
        
         <React15Tabulator columns={this.columns} data={this.state.data} options={options}/>
        
-{/* 
-        <h3>Editable Table</h3>
-        <React15Tabulator
-          columns={editableColumns}
-          data={data}
-          footerElement={<span>Footer</span>}
-        /> */}
+
 
        
       </div>

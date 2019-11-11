@@ -1,7 +1,7 @@
 import React, { Component,Fragment } from 'react';
 import Table from './components/Table';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import ModalWrapper from './components/ModalWrapper';
 import './App.css';
 
 
@@ -160,7 +160,7 @@ class Autocomplete extends Component {
 function Ap() {
   return (
     <div>
-      <h1>COUNTIES IN KENYA</h1>
+    
       <h2>Search for your county</h2>
       <Autocomplete
         suggestions={[
@@ -182,6 +182,8 @@ class App extends Component {
     return (
       <div >
      <Ap/>
+     
+       
        
     <Table/>
         
